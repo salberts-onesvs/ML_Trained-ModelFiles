@@ -1,0 +1,43 @@
+{
+  "model_name": "photo_defect_classifier",
+  "model_version": "2.0",
+  "model_type": "multi_class",
+  "input_size": 224,
+  "num_classes": 7,
+  "class_names": [
+    "blurry",
+    "glare",
+    "good",
+    "low_text_legibility",
+    "obstructed",
+    "qr_code",
+    "too_dark"
+  ],
+  "recommended_threshold": 0.6,
+  "output_interpretation": {
+    "description": "Softmax probabilities for 7 classes",
+    "class_order": [
+      "blurry",
+      "glare",
+      "good",
+      "low_text_legibility",
+      "obstructed",
+      "qr_code",
+      "too_dark"
+    ],
+    "good_class_index": 2,
+    "prediction": "argmax of output = predicted class",
+    "pass_condition": "output[2] >= 0.6 (good class confidence)"
+  },
+  "messages": {
+    "good": null,
+    "blurry": "Text is not sharp enough to read. Move closer to the label, hold the camera flat and square, tap the screen to focus, and pause briefly before taking the photo.",
+    "too_dark": "Label is too dark to read. Turn on your flash, hold the camera straight to the label, and avoid steep angles that can deepen shadows.",
+    "glare": "Flash reflection is covering part of the label. Slightly shift your position to remove the glare, then retake straight-on.",
+    "low_text_legibility": "Label appears faded or damaged. Move in close, hold the camera flat to the label, and capture it as clearly as possible.",
+    "qr_code": "Capture the full data label with the serial and model numbers visible \u2014 not the QR code.",
+    "obstructed": "Something is blocking the label. Clear the obstruction, center the label in the frame, and shoot straight-on."
+  },
+  "validation_accuracy": 0.6620879120879121,
+  "training_date": "2026-02-24"
+}

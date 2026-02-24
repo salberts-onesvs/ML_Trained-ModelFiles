@@ -1,0 +1,22 @@
+{
+  "model_name": "photo_quality_gatekeeper",
+  "model_version": "1.0",
+  "input_size": 224,
+  "recommended_threshold": 0.5,
+  "class_names": [
+    "bad",
+    "good"
+  ],
+  "output_interpretation": {
+    "description": "Single float value between 0.0 and 1.0",
+    "good_quality": "score < 0.5",
+    "bad_quality": "score >= 0.5"
+  },
+  "validation_metrics": {
+    "accuracy": 137.875,
+    "precision": 0.5183823529411765,
+    "recall": 0.6875,
+    "f1_score": 0.5910823170731707
+  },
+  "training_date": "2025-02-12"
+}
