@@ -1,0 +1,43 @@
+{
+  "model_name": "qc_multiclass",
+  "model_version": "1.0",
+  "model_type": "multi_class",
+  "input_size": 224,
+  "num_classes": 7,
+  "class_names": [
+    "blurry",
+    "glare",
+    "good",
+    "low_text_legibility",
+    "obstructed",
+    "qr_code",
+    "too_dark"
+  ],
+  "recommended_threshold": 0.6,
+  "output_interpretation": {
+    "description": "Softmax probabilities for 7 classes",
+    "class_order": [
+      "blurry",
+      "glare",
+      "good",
+      "low_text_legibility",
+      "obstructed",
+      "qr_code",
+      "too_dark"
+    ],
+    "good_class_index": 2,
+    "prediction": "argmax of output = predicted class",
+    "pass_condition": "output[2] >= 0.6 (good class confidence)"
+  },
+  "messages": {
+    "good": null,
+    "blurry": "Text is not sharp enough to read. Hold steady and pause briefly before taking the photo.",
+    "too_dark": "Label is too dark to read clearly. Use flash if needed and keep the camera straight to the label.",
+    "glare": "Flash reflection is covering part of the text. Slightly adjust your position to reduce glare.",
+    "low_text_legibility": "Label appears faded or damaged \u2014 do your best to capture it clearly.",
+    "qr_code": "Capture the full data label with serial and model numbers visible.",
+    "obstructed": "Something is blocking the label \u2014 move the obstruction and retake the photo."
+  },
+  "validation_accuracy": 0.6456140350877193,
+  "training_date": "2026-02-25"
+}
